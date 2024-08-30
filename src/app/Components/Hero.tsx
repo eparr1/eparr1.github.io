@@ -13,10 +13,10 @@ const Hero = () => {
 <div className='grid grid-cols-1 sm:grid-cols-12 min-h-screen relative mx-auto lg:w-[1440px] lg:h-[783px] container overflow-hidden z-0'>
         <div className='col-span-7 flex justify-center items-center sm-text-left'>
 
-            <div className='absolute mb-4 text-4xl sm:text-5xl  text-white font-extrabold align-top left-5 sm:left-10  md:text-6xl lg:left-5 xl:left-5'>
+            <div className='absolute mb-4 text-4xl sm:text-5xl  text-white font-extrabold align-top left-5 sm:left-10  md:text-6xl lg:left-5 xl:left-5 z-30'>
                
                 <h1>
-                  <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-700'>
+                  <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-700 z-30'>
                     Hello, I'm {""}
                     </span>
                     <br></br>
