@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
+
 
 export const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,8 +36,8 @@ export const Header: React.FC = () => {
 
             <nav>
                 <ul className="hidden md:flex pr-6 space-x-10 font-bold text-lg text-indigo-600 ">
-                    <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8 "><a href="#">Homepage</a></li>
-                    <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8 "><a href="#">Blog</a></li>
+                    <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8 "><a >Homepage</a></li>
+                    <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8 "><Link href="Page./blog.tsx">Blog</Link></li>
                     <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8 "><a href="#">Projects</a></li>
                 </ul>
             </nav>
@@ -56,7 +58,7 @@ export const Header: React.FC = () => {
             >
                 <li className="pt-6 active:text-indigo-300 hover:underline decoration-cyan-300 decoration-2 underline-offset-8"><a href="#">Homepage</a></li>
                 <li className='active:text-indigo-300 hover:underline decoration-cyan-300 decoration-2 underline-offset-8'> <a href="#">Blog</a></li>
-                <li className='active:text-indigo-300 hover:underline pb-5 decoration-cyan-300 decoration-2 underline-offset-8'><a href="#">Projects</a></li>
+                <li className='active:text-indigo-300 hover:underline pb-2 decoration-cyan-300 decoration-2 underline-offset-8'><a href="#">Projects</a></li>
             </ul>
         </header>
     );

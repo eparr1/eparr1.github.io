@@ -1,49 +1,113 @@
-
+"use client";
 import Image from 'next/image';
-import {Meteors} from './meteors'
-import { HeroHighlight } from './animated';
-
+import { HeroHighlight, Highlight } from './animated';
+import { Children } from 'react';
+import { AuroraBackground } from './aurora-background';
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalProvider, ModalTrigger } from './button';
+import { TypeAnimation } from 'react-type-animation';
+  
 
 const Hero = () => {
     return (
-<div className='relative min-h-screen w-full overflow-hidden'>
-    <HeroHighlight>
-        <h1>hi</h1>
+<section>
+<div className='grid grid-cols-1 sm:grid-cols-12 min-h-screen relative mx-auto lg:w-[1440px] lg:h-[783px] container overflow-hidden z-0'>
+        <div className='col-span-7 flex justify-center items-center sm-text-left'>
 
-    </HeroHighlight>
-    
-  
-    <div className='h-2/3 lg:h-5/6 lg:flex lg:justify-center max-w-full absolute bottom-0 right-0 object-cover lg:left-0  mx-auto'>
-        <Image
-      src="/avater.png"
-      alt="Description of the image"
-      width={400}
-      height={300}
+            <div className='absolute mb-4 text-4xl sm:text-5xl  text-white font-extrabold align-top left-5 sm:left-10  md:text-6xl lg:left-5 xl:left-5'>
+               
+                <h1>
+                  <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-700'>
+                    Hello, I'm {""}
+                    </span>
+                    <br></br>
+                    <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Emma',
+        1500, // wait 1s before replacing "Mice" with "Hamsters"
+        'A Wanna-Be Developer',
+        1500,
+      ]}
+      wrapper="span"
+      speed={20}
+      repeat={Infinity}
     />
+                  
+                </h1>
 
+                <p className=' hidden text-base md:block lg:block lg:text-xl w-1/2 py-5 font-thin'>I've been learning to code for the past 8 months now and I feel like I've learnt so much and yet so little about the world of tech.
+                See I was previously in Psychology working in the NHS, which feel worlds apart, but I have fallen in love with coding a little bit everyday and I am currently blogging my journey,
+                 and how I am paving my own way into the tech world. Or well at least trying to.
+                </p> 
 
+                <div className='lg:text-xl text-sm'>
+                    <button className='px-6 py-3 w-fit sm:w-fit rounded-full mr-4 font-semibold bg-white hover:bg-slate-200 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white'><a>My Github</a></button>
+                    <button className='px-1 py-1 justify-end w-fit sm:w-fit rounded-full mr-4 font-semibold bg-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500  hover:bg-slate-800 mt-3'>
+                        <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>
+                            My Blog
+                        </span>
+                    </button>
 
-    </div>;
-
-    <div className="hidden  absolute -bottom-1/4 w-big h-big right-0 left-0 mx-auto lg: bg-indigo-900 rounded-full -z-10">
-    
-    </div>
-    
-    <div className='lg:block'>
-
-        <div className="hidden lg:flex flex-col items-start gap-1 absolute right-10 lg:right-5 top-1/2 transform -translate-y-1/2 bg-white p-6 h-fit w-11/12 lg:w-1/3 shadow-lg rounded-lg lg:rounded-xl">
-                <h1 className="text-2xl font-bold mb-4 text-indigo-600">Hi, I'm Emma</h1>
-                <p className="text-lg mb-4">I currently have a whole 6 months experience in tech, where I have taught myself how to code. I love it, but it's also absolutely terrifying. All part of the charm. I am actually working in psychology right now and I am currently blogging my journey, what I'm making, and how I am paving my own way into the tech world. Or well, trying to.</p>
-                <a href="#contact" className="bg-indigo-600 px-3 py-1 rounded-full text-white font-semibold mb-2 text-xl">Hire Me</a>
-                <a href="#blog" className="bg-indigo-600 px-3 py-1 rounded-full font-semibold text-white text-xl">Follow Along</a>
+                </div>   
             </div>
-            
-            </div>
-    
         </div>
 
+        {/* Container for Circle and Image */}
+            {/* Wrapper to position circle and image correctly */}
+            <div className='relative col-span-5 flex justify-center items-end w-full'>
+                
+                {/* Circle */}
+                <div className="hidden lg:block absolute w-[525px] h-[525px] -bottom-[25%] transform -translate-x-1/2 left-1/2 rounded-full z-10 bg-indigo-900/40"></div>
+                
+                {/* Image */}
+                <Image
+                    src="/avater.png"
+                    priority={false}
+                    alt="emma's avatar"
+                    className='absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20'
+                    width={350}
+                    height={350}
+                />
+            </div>
+        
     
+    
+
+
+
+    
+
+        {/* <HeroHighlight
+            containerClassName="py-16"
+             className="text-gray-600 text-4xl flex align-middle  font-bold absolute top-1/4 left-5 sm:left-10 sm:text-4xl md:text-6xl"
+             >
+             <h1 className='pb-4'>
+            A WannaBe <br />
+                <Highlight className="relative bg-gradient-to-t from-indigo-400 text-blue-500">Developer</Highlight>
+            </h1>
+                </HeroHighlight>
+            </div> */}
+
+
+
+
+
+{/* 
+<div className="hidden lg:flex flex-col items-start gap-1 absolute right-10 lg:right-5 top-1/2 transform -translate-y-1/2 bg-white p-6 h-fit w-11/12 lg:w-1/3 shadow-lg rounded-lg lg:rounded-xl z-30">
+    <h1 className="text-2xl font-bold mb-4 text-indigo-600">Hi, I'm Emma</h1>
+    <p className="text-lg mb-4">
+        
+    <button className='bg-indigo-200 rounded-lg'>My Blog</button>
+    <button>Github</button>
+    
+    
+    </div>
+*/}
+
+            </div>
+ </section>
+       
     )
 }
 
-export default Hero 
+export default Hero

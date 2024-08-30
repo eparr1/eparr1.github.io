@@ -1,14 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-
-
-module.exports = {
+export default {
   content: [
     "./src/**/*.{js,ts,tsx,jsx}"
   ],
   theme: {
     extend: {
-      fontFamily:{
-        'nunito': ['Nunito', 'sans-serif' ]
+      fontFamily: {
+        'nunito': ['Nunito', 'sans-serif']
       },
       animation: {
         "meteor-effect": "meteor 5s linear infinite",
@@ -22,11 +20,11 @@ module.exports = {
             opacity: "0",
           },
         },
+      },
     },
   },
   plugins: [
     require("@tailwindcss/typography"),
-    require("daisyui")
+    require("daisyui"),
   ],
-}
-}
+};

@@ -1,69 +1,77 @@
-
+'use client';
 import Image from 'next/image';
-import { WobbleCard } from "./wobble-card"
-import { BlueWobbleCard } from "./blueWobbleCard"
+import { SetStateAction, useState, useTransition } from 'react';
+import TabButton from './tabButton';
+import { TracingBeam } from './tracing-beam';
+import { Button, MovingBorder } from './moving-border';
+
+const Noise = () => {
+  return (
+    <div
+      className="absolute inset-0 w-full h-full scale-[1.2] transform opacity-20 [mask-image:radial-gradient(#fff,transparent,75%)]"
+      style={{
+        backgroundImage: "url(/noise.webp)",
+        backgroundSize: "20%",
+      }}
+    ></div>
+  );
+};
+
+
 
 const About = () => {
-    return (
-        <div className="flex flex-col lg:flex-row justify-between items-center h-1/2 p-4 lg:p-8 gap-8">
-            <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
-                <BlueWobbleCard>
-                    <div className="p-4 flex justify-center items-center h-full">
-                        <Image
-                            src="/IMG_3766.PNG" // Replace with your photo path
-                            alt="Your Name"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-cover"
-                        />
-                    </div>
-                </BlueWobbleCard>
-            </div>
+  
+  const [isPending, startTransition] = useTransition();
+
+
+  return (
+    <div id='about' className="flex flex-col lg:flex-row justify-between items-center h-1/2 p-4 lg:p-8 gap-8">
+        
+        <div className="hidden lg:block w-full lg:w-1/3 mb-8 lg:mb-0">
+            <Button
+                borderRadius="1.75rem"
+                className="bg-slate-900 text-white border-neutral-200"
+                containerClassName="h-[500px] w-[400px]" // Add this to set the size
+            >
+        <div className="p-4 flex justify-center items-center h-full">
+         <Image
+            src="/IMG_3766.PNG"
+            alt="Your Name"
+             width={500}
+             height={500}
+            className="rounded-lg object-cover"
+        />
+     </div>
+</Button>
+              
+          </div>
+
+          <div className="w-full lg:w-2/3">
+              <div className="p-5 w-[850px] h-[500px] border-white border-2 space-y-4 text-white bg-indigo-800/60 relative rounded-2xl overflow-hidden">
+                  <Noise />
+                  <h1 className="text-white text-center font-bold text-3xl">About Me</h1>
+                  <p className="text-xl text-white ">
+                      I am a wanna-be developer and only just started on my journey into tech this year (2024).
+                      I've currently been focusing on front-end at the moment. I started on Codecademy on their full-stack
+                      developer course and developed my skills starting with HTML, CSS, and Javascript.
+                      Next, I knew I needed to get with the times and what developers are working with now, so I
+                      started to learn Tailwind CSS, React, TypeScript, and have now moved on to Next.js.
+                      I'm a quick learner, and being able to be creative and yet problem-solve every day is what I've loved about coding and one of the reasons
+                      why I want the career change from Psychology. If you want to know more, check out my <a href='#'>blog</a>!
+                  </p>
+                <button>
+                    <a href="#contact" className="bg-white px-6 py-2 rounded-full text-indigo-600 font-semibold text-xl mt-4 inline-block hover:bg-indigo-700 hover:text-white transition-colors">
+                      Get in Touch
+                     </a>
+                </button>
+                  
+              </div>
+          </div>
             
-            <div className="w-full lg:w-2/3">
-                <WobbleCard>
-                    <div className="p-6 space-y-4 text-white">
-                        <h1 className="text-white font-bold text-3xl">ABOUT ME</h1>
-                        <p className="text-xl text-white">
-                            I am passionate about technology and psychology. Over the past 6 months, 
-                            I've been diving deep into coding, teaching myself new skills and navigating 
-                            the exciting yet challenging tech world.
-                        </p>
-                        
-                        <div className="space-y-3 text-white">
-                            <SkillBar skill="HTML/CSS" percentage={66} />
-                            <SkillBar skill="Javascript" percentage={33} />
-                            <SkillBar skill="Typescript" percentage={10} />
-                            <SkillBar skill="Tailwind CSS" percentage={33} />
-                            <SkillBar skill="React" percentage={5} />
-                        </div>
+        
+          
+      </div>
+  );
+};
 
-                        <a href="#contact" className="bg-white px-6 py-2 rounded-full text-indigo-600 font-semibold text-xl mt-4 inline-block hover:bg-indigo-700 hover:text-white transition-colors">
-                            Get in Touch
-                        </a>
-                    </div>
-                </WobbleCard>
-            </div>
-        </div>
-    )
-}
-
-// Helper component for skill bars
-interface SkillBarProps {
-    skill: string;
-    percentage: number;
-}
-
-const SkillBar: React.FC<SkillBarProps> = ({ skill, percentage }) => (
-    <div>
-        <h2 className="text-white font-medium">{skill}</h2>
-        <div className="w-full bg-gray-400 h-1.5 rounded-md">
-            <div 
-                className="bg-blue-900 h-1.5 rounded-md" 
-                style={{ width: `${percentage}%` }}
-            ></div>
-        </div>
-    </div>
-);
-
-export default About
+export default About;

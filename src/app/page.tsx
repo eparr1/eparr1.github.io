@@ -3,6 +3,9 @@ import Image from "next/image";
 import { Header } from '@/app/Components/Header';
 import Hero from "./Components/Hero";
 import About from "./Components/about";
+import { Skills } from "./Components/Skills";
+import { Container } from "postcss";
+import { TracingBeam } from "./Components/tracing-beam";
 
 export default function Home() {
   return (
@@ -15,18 +18,31 @@ export default function Home() {
       </Head>
       
       <main className="font-nunito">
-        <div className="min-h-screen bg-gradient-to-t from-indigo-200 relative overflow-hidden">
-       {/*Nav Bar*/}
-        <Header />
+        <div className="min-h-screen bg-[#121212] relative  overflow-hidden">
+          {/*Nav Bar*/}
+              <Header />
 
-        {/*Hero Section*/}
-          <Hero />
+        <TracingBeam className="w-full">
+              
 
-        
-        {/*About me*/}
-        <About />
-        
+{/*Hero Section*/}
+<div className="py-4 mx-auto container"><Hero /></div>
+
+
+  
+
+
+{/*About me*/}
+<About />
+
+{/*Skills*/}
+
+<Skills />
+
+
+        </TracingBeam>
         </div>
+       
       </main>
     </>
   );
