@@ -5,7 +5,7 @@ import Hero from "./Components/Hero";
 import About from "./Components/about";
 import { Skills } from "./Components/Skills";
 import { Container } from "postcss";
-import { TracingBeam } from "./Components/tracing-beam";
+import { TracingBeam } from "./Components/UI/tracing-beam";
 
 export default function Home() {
   return (

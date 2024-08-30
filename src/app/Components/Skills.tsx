@@ -1,6 +1,6 @@
 'use client'
 import { SetStateAction, startTransition, useState } from "react";
-import TabButton from "./tabButton"
+import TabButton from "./UI/tabButton"
 
 export const Skills = () => {
     interface TabData {

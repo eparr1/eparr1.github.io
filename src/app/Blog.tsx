@@ -6,8 +6,6 @@ export default function Blog() {
     return (
     <div>
         <h1>hi</h1>
-        <BlogPage />
     </div>
-        
     )
 }

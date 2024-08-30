@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
                         <a href="#">Homepage</a>
                     </li>
                     <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8">
-                        <Link href="Page./blog.tsx">Blog</Link>
+                        <Link href="/Blog">Blog</Link>
                     </li>
                     <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8">
                         <a href="#">Projects</a>

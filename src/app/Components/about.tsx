@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { useState, useTransition } from 'react';
-import TabButton from './tabButton';
-import { TracingBeam } from './tracing-beam';
-import { Button, MovingBorder } from './moving-border';
+import TabButton from './UI/tabButton';
+import { TracingBeam } from './UI/tracing-beam';
+import { Button, MovingBorder } from './UI/moving-border';
 
 const Noise = () => {
   return (

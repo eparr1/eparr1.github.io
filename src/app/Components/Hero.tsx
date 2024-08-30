@@ -1,10 +1,10 @@
 "use client";
 
 import Image from 'next/image';
-import { HeroHighlight, Highlight } from './animated';
+import { HeroHighlight, Highlight } from './UI/animated';
 import { Children } from 'react';
-import { AuroraBackground } from './aurora-background';
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalProvider, ModalTrigger } from './button';
+import { AuroraBackground } from './UI/aurora-background';
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalProvider, ModalTrigger } from './UI/button';
 import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
