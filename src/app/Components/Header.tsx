@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Blog from '../blog/page';
 
 export const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +42,7 @@ export const Header: React.FC = () => {
                         <a href="#">Homepage</a>
                     </li>
                     <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8">
-                        <Link href="/Blog">Blog</Link>
+                        <Link href='/blog'>Blog</Link>
                     </li>
                     <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8">
                         <a href="#">Projects</a>

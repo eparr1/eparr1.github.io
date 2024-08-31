@@ -6,6 +6,7 @@ import About from "./Components/about";
 import { Skills } from "./Components/Skills";
 import { Container } from "postcss";
 import { TracingBeam } from "./Components/UI/tracing-beam";
+import Blog from "./blog/page";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
       <main className="font-nunito">
         <div className="min-h-screen bg-[#121212] relative  overflow-hidden">
           {/*Nav Bar*/}
-              <Header />
+              <Header/>
 
         <TracingBeam className="w-full">
               

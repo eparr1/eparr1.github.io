@@ -46,7 +46,7 @@ export const Skills = () => {
       };
 
     return (
-    <div className="w-full h-[500px]">
+    <div className="w-full h-[600px]">
         <div className="flex text-4xl flex-row mt-3 text-white ">
             <TabButton
                 selectTab={() => handleTabChange("skills")}
