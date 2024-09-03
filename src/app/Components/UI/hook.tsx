@@ -8,8 +8,8 @@ export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
   );
-  const id = useId();
   const ref = useRef<HTMLDivElement>(null);
+  const id = useId();
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -44,7 +44,7 @@ export function ExpandableCardDemo() {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
@@ -68,14 +68,14 @@ export function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
                   priority
                   width={200}
                   height={200}
-                  src= 
+                  src={active.src}
                   alt={active.title}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
@@ -86,23 +86,20 @@ export function ExpandableCardDemo() {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-medium text-neutral-700 dark:text-neutral-200 text-base"
+                      className="font-bold text-neutral-700 dark:text-neutral-200"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 text-base"
+                      className="text-neutral-600 dark:text-neutral-400"
                     >
                       {active.description}
                     </motion.p>
                   </div>
 
                   <motion.a
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
                     className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
@@ -128,39 +125,45 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
+      <ul className="max-w-2xl mx-auto w-full gap-4">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
-            key={card.title}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            key={`card-${card.title}-${id}`}
+            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col  w-full">
+            <div className="flex gap-4 flex-col md:flex-row">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   width={100}
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-60 w-full  rounded-lg object-cover object-top"
+                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
                 />
               </motion.div>
-              <div className="flex justify-center items-center flex-col">
+              <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
+                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base"
+                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left"
                 >
                   {card.description}
                 </motion.p>
               </div>
             </div>
+            <motion.button
+              layoutId={`button-${card.title}-${id}`}
+              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
+              onClick={() => setActive(card)} // Updated to open the detailed view
+            >
+              {card.ctaText}
+            </motion.button>
           </motion.div>
         ))}
       </ul>
@@ -183,7 +186,6 @@ export const CloseIcon = () => {
           duration: 0.05,
         },
       }}
-      xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -203,24 +205,20 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Lana Del Rey",
-    title: "Summertime Sadness",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "Using Front-end Mentor Challenge to create a QR code!",
+    title: "09/09/2024",
+    src: "/avater.png",
+    ctaText: "Play",
     content: () => {
       return (
         <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
+          So, this is my first challenge using front-end mentor and I used Tailwind CSS again. The main aim was to recreate the QR code image with the one provided and I have to say actually 
+          setting up both the Tailwind CSS and uploading it onto my GitHub was actually frustrating at times. It&apos;s amazing how quickly you forget the simple set-up instructions for a new project.
+          I don&apos;t know if this was just me but for some reason my Tailwind CSS was not computing with Git, as I set up and linked my project to GitHub first. It didn&apos;t like that. 
+          I ended up starting again, linking my Tailwind CSS first before connecting to GitHub and it did work. But still so annoying!!
+          Don&apos;t get me started on merging existing changes because there seemed to be some unsolved change stuck in the Git universe. I did work it out though ... eventually.
+          Just learning to take my time with it. But overall really glad I did this super easy challenge, which taught me a lot about setting up GitHub and setting up a project on 
+          Visual Studio Code.
         </p>
       );
     },
@@ -228,9 +226,7 @@ const cards = [
   {
     description: "Babbu Maan",
     title: "Mitran Di Chhatri",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Play",
     content: () => {
       return (
         <p>
@@ -241,51 +237,6 @@ const cards = [
           often reflect the struggles and triumphs of everyday life, capturing
           the essence of Punjabi culture and traditions. With a career spanning
           over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
-        </p>
-      );
-    },
-  },
-
-  {
-    description: "Metallica",
-    title: "For Whom The Bell Tolls",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience. Formed in Los Angeles, California, they have become a
-          cultural icon in the heavy metal music industry. <br /> <br /> Their
-          songs often reflect themes of aggression, social issues, and personal
-          struggles, capturing the essence of the heavy metal genre. With a
-          career spanning over four decades, Metallica has released numerous hit
-          albums and singles that have garnered them a massive fan following
-          both in the United States and abroad.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Lord Himesh",
-    title: "Aap Ka Suroor",
-    src: "https://assets.aceternity.com/demos/aap-ka-suroor.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Himesh Reshammiya, a renowned Indian music composer, singer, and
-          actor, is celebrated for his distinctive voice and innovative
-          compositions. Born in Mumbai, India, he has become a prominent figure
-          in the Bollywood music industry. <br /> <br /> His songs often feature
-          a blend of contemporary and traditional Indian music, capturing the
-          essence of modern Bollywood soundtracks. With a career spanning over
-          two decades, Himesh Reshammiya has released numerous hit albums and
           singles that have garnered him a massive fan following both in India
           and abroad.
         </p>

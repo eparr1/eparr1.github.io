@@ -39,7 +39,7 @@ export const Header: React.FC = () => {
             <nav>
                 <ul className="hidden md:flex pr-6 space-x-10 font-bold text-lg text-indigo-600 ">
                     <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8">
-                        <a href="#">Homepage</a>
+                        <Link href="/">Homepage</Link>
                     </li>
                     <li className="hover:text-indigo-400 hover:underline decoration-cyan-300 decoration-2 underline-offset-8">
                         <Link href='/blog'>Blog</Link>
