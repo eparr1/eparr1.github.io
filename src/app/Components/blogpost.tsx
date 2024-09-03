@@ -1,16 +1,21 @@
+
+
 export default function BlogPage() {
   return (
-    <>
-      <header className="max-w-xl mx-auto mt-20 text-center">
-        <h1 className="text-4xl">
-          <span className="text-indigo-600 font-semibold">The Blog</span>
-        </h1>
-        <p className="text-lg mt-6 text-black">
+    <div className="bg-[#121212]">
+        <div> 
+          <h1 className="text-4xl">
+          <span className="text-indigo-600 font-semibold">The Blog</span></h1>
+          <p className="text-lg mt-6 text-white">
           Taking you through my coding journey from start to finish! Sharing my latest projects including this very website!
         </p>
-      </header>
+      </div>
+        
+       
+       
+    
 
-      <main className="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+      <main className="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6 bg-[#121212]">
         <article className="transition-colors duration-300 hover:bg-white border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
           <div className="py-6 px-5 lg:flex">
             <div className="flex-1 lg:mr-8">
@@ -55,6 +60,8 @@ export default function BlogPage() {
           </div>
         </article>
       </main>
-    </>
+    </div>
+      
+    
   );
 }

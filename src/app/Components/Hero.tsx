@@ -32,9 +32,10 @@ const Hero = () => {
                         </h1>
 
                         <p className="hidden text-base md:block lg:block lg:text-xl w-1/2 py-5 font-thin">
-                            I&apos;ve been learning to code for the past 8 months now and I feel like I&apos;ve learnt so much and yet so little about the world of tech.
-                            See I was previously in Psychology working in the NHS, which feels worlds apart, but I have fallen in love with coding a little bit everyday and I am currently blogging my journey,
-                            and how I am paving my own way into the tech world. Or well, at least trying to.
+                            I&apos;m Emma Parr based in Edinburgh, Scotland 📍<br></br>
+                            I&apos;ve been learning to code for the past 8 months now and I feel like I&apos;ve learnt so much and yet so little about the world of tech. I am documenting my journey
+                            and you can follow along 👋
+
                         </p>
 
                         <div className="lg:text-xl text-sm">

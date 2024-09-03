@@ -11,7 +11,7 @@ export const Skills = () => {
       
       const TAB_DATA: TabData[] = [
           { title: "Skills", id: "skills", content: (
-              <ul className="list-disc pl-2 text-white text-2xl selection:text-2xl ">
+              <ul className="list-disc pl-2 text-white text-xl selection:text-2xl ">
                 <li>Node.js</li>
                 <li>TypeScript</li>
                 <li>HTML & CSSL</li>
@@ -21,13 +21,13 @@ export const Skills = () => {
               </ul>
             ), },
           { title: "Education", id: "education", content: (
-              <ul className="list-disc pl-2 text-white text-2xl ">
+              <ul className="list-disc pl-2 text-white text-xl ">
                 <li>Masters in Child Clinicl Psychology - Distinction </li>
                 <li>Undergradaution (Hons) degree in Psychology - HIGH 2:1</li>
               </ul>
             ),},
           { title: "Certifications", id: "certifications", content: (
-              <ul className="list-disc pl-2 text-white text-2xl">
+              <ul className="list-disc pl-2 text-white text-xl">
                 <li>CodeCademy foundations in web development</li>
                 <li>CodeCademy Responsive Design</li>
                 <li>CodeCademy TypeScript Foundations</li>
@@ -47,7 +47,7 @@ export const Skills = () => {
 
     return (
     <div className="w-full h-[600px]">
-        <div className="flex text-4xl flex-row mt-3 text-white ">
+        <div className="flex text-2xl flex-row mt-3 text-white ">
             <TabButton
                 selectTab={() => handleTabChange("skills")}
                 active={tab === "skills"}
@@ -69,7 +69,7 @@ export const Skills = () => {
             </TabButton>
         </div>
         
-        <div className="mt-8">
+        <div className="mt-4">
                 {TAB_DATA.find((t: { id: any} ) => t.id === tab)?.content}
         </div>
 
