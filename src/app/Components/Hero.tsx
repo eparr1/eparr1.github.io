@@ -1,5 +1,5 @@
 "use client";
-
+import Link from 'next/link';
 import Image from 'next/image';
 import { HeroHighlight, Highlight } from './UI/animated';
 import { Children } from 'react';
@@ -40,11 +40,11 @@ const Hero = () => {
 
                         <div className="lg:text-xl text-sm">
                             <button className="px-6 py-3 w-fit sm:w-fit rounded-full mr-4 font-semibold bg-white hover:bg-slate-200 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white">
-                                <a>My Github</a>
+                            <Link href='https://github.com/eparr1/portfolio.github.io'>Github</Link>
                             </button>
                             <button className="px-1 py-1 justify-end w-fit sm:w-fit rounded-full mr-4 font-semibold bg-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 mt-3">
                                 <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                                    My Blog
+                                     <Link href='/blog'>My Blog</Link>
                                 </span>
                             </button>
                         </div>

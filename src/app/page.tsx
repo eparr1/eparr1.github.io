@@ -36,9 +36,7 @@ export default function Home() {
 {/*About me*/}
 <About />
 
-{/*Skills*/}
 
-<Skills />
 
 
         </TracingBeam>

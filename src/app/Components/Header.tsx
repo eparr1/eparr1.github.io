@@ -65,13 +65,13 @@ export const Header: React.FC = () => {
                 className={`font-normal absolute top-16 left-0 bg-white min-h-[25vh] w-full rounded-b-3xl space-y-6 text-center text-indigo-600 transition-all duration-300 ease-in-out text-xl ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
             >
                 <li className="pt-6 active:text-indigo-300 hover:underline decoration-cyan-300 decoration-2 underline-offset-8">
-                    <a href="#">Homepage</a>
+                        <Link href="/">Homepage</Link>
                 </li>
                 <li className="active:text-indigo-300 hover:underline decoration-cyan-300 decoration-2 underline-offset-8">
-                    <a href="#">Blog</a>
+                    <Link href='/blog'>Blog</Link>
                 </li>
                 <li className="active:text-indigo-300 hover:underline pb-2 decoration-cyan-300 decoration-2 underline-offset-8">
-                    <a href="#">Projects</a>
+                    <a href="#">Contact Me</a>
                 </li>
             </ul>
         </header>
