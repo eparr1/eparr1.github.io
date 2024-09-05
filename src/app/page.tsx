@@ -21,13 +21,14 @@ export default function Home() {
       <main className="font-nunito">
         <div className="min-h-screen bg-[#121212] relative  overflow-hidden">
           {/*Nav Bar*/}
+          <TracingBeam className="w-full">  
               <Header/>
 
-        <TracingBeam className="w-full">
+        
               
 
 {/*Hero Section*/}
-<div className="py-4 mx-auto container"><Hero /></div>
+<div className=" "><Hero /></div>
 
 
   
