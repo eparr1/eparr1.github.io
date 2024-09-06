@@ -30,7 +30,7 @@ const Contact = () => {
                 <div className="flex flex-col items-start gap-[30px]">
                     {/* Text Section */}
                     <div className="flex flex-col gap-[30px]">
-                        <h1 className="text-4xl font-semibold bg-gradient-to-l from-[#DF8908] via-[#DF8908] to-[#B415FF] bg-clip-text text-transparent">Let's Talk</h1>
+                        <h1 className="text-4xl font-semibold bg-gradient-to-l from-[#DF8908] via-[#DF8908] to-[#B415FF] bg-clip-text text-transparent">Let&apos;s Talk</h1>
                         <p className="text-[#D8D8D8] w-[500px] text-base leading-5">
                             Please feel free to send me a message about anything you would possibly like to work on. You can contact me at any time on:
                         </p>
