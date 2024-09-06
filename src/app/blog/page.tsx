@@ -7,7 +7,7 @@ import { SparklesCore } from "../Components/UI/sparkles";
 export default function Blog() {
     return (
         <><>
-            <div>
+            <div className="">
                 <Header />
             </div>
         </><div className="h-[60rem] relative w-full bg-black flex flex-col justify-center overflow-hidden rounded-md">

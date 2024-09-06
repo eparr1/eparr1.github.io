@@ -13,7 +13,7 @@ export default function BlogPage() {
         </p>
       </div>
       <div>
-        <ExpandableCardDemo />
+        
       </div>
       
     

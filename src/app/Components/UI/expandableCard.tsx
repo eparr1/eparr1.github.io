@@ -60,7 +60,7 @@ export function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              className="flex absolute top-2 right-2 lg:hidden items-center justify-center rounded-full h-6 w-6"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -68,7 +68,7 @@ export function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white  sm:rounded-3xl overflow-hidden"
+              className=" w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white  sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -82,27 +82,28 @@ export function ExpandableCardDemo() {
               </motion.div>
 
               <div>
+            
+            {/*This bit is when the card expands the text for that */}
                 <div className="flex justify-between items-start p-4">
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-200"
+                      className="font-bold text-[#131316] "
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-400"
+                      className="text-[#262628]"
                     >
                       {active.description}
                     </motion.p>
                   </div>
-
+{/*This changes the button when it expands*/}
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                    className="px-4 py-3 text-sm rounded-full font-bold bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white"
                   >
                     {active.ctaText}
                   </motion.a>
@@ -125,15 +126,15 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full gap-4">
+      <ul className="max-w-2xl mx-auto w-full gap-4 ">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50  rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row justify-between items-center hover:text-black rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col md:flex-row ">
+            <div className="flex gap-4 flex-col md:flex-row hover:text-black">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   width={100}
@@ -146,7 +147,7 @@ export function ExpandableCardDemo() {
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-200 text-center md:text-left"
+                  className="font-medium text-neutral-200 hover:text-black text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
@@ -160,7 +161,7 @@ export function ExpandableCardDemo() {
             </div>
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
+              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:text-white text-black mt-4 md:mt-0"
               onClick={() => setActive(card)}
             >
               {card.ctaText}
@@ -207,34 +208,25 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Front-end QR Code Challenge",
-    title: "1/09/24",
+    description: "1/09/24",
+    title: "Front-end QR Code Challenge",
     src: "/avater.png",
     ctaText: "Read More",
     ctaLink: "/blog",
     content: () => {
       return (
         <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
+          
         </p>
       );
     },
   },
   {
-    description: "Babbu Maan",
-    title: "Mitran Di Chhatri",
-    src: "/logo.png",
-    ctaText: "Read More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "20/08/24",
+    title: "How I started the portfolio website",
+    src: "/gradphoto.jpg",
+    ctaText: "Read more",
+    ctaLink: "/blog",
     content: () => {
       return (
         <p>

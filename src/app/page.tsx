@@ -8,6 +8,8 @@ import { Container } from "postcss";
 import { TracingBeam } from "./Components/UI/tracing-beam";
 import Blog from "./blog/page";
 import Contact from "./Components/contact";
+import { ExpandableCardDemo } from "./Components/UI/expandableCard";
+import { BlogSection } from "./Components/appBlogSection";
 
 export default function Home() {
   return (
@@ -25,21 +27,15 @@ export default function Home() {
           <TracingBeam className="w-full">  
               <Header/>
 
-        
-              
+          {/*Hero Section*/}
+          <div><Hero /></div>
 
-{/*Hero Section*/}
-<div className=" "><Hero /></div>
+          {/*About me*/}
+          <About />
 
+          <BlogSection />
 
-  
-
-
-{/*About me*/}
-<About />
-
-
-<Contact />
+          <Contact />
 
         </TracingBeam>
         </div>
