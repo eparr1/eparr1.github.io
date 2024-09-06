@@ -6,12 +6,23 @@ import { Children } from 'react';
 import { AuroraBackground } from './UI/aurora-background';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalProvider, ModalTrigger } from './UI/button';
 import { TypeAnimation } from 'react-type-animation';
+import { SparklesCore } from './UI/sparkles';
 
 const Hero = () => {
     return (
         <section>
             <div className="grid grid-cols-1 sm:grid-cols-12 min-h-screen relative mx-auto lg:w-full h-screen container overflow-hidden z-0">
-
+            <div className="absolute inset-0 -z-5">
+                <SparklesCore
+                    id="sparkles-hero-section"
+                    background="transparent"
+                    minSize={0.2}
+                    maxSize={0.9}
+                    particleDensity={10}
+                    className="h-full w-full"
+                    particleColor="#FFFFFF"
+                />
+            </div>
                 <div className="col-span-7 flex justify-center items-center sm-text-left">
                     <div className="absolute mb-4 text-4xl sm:text-5xl text-white font-extrabold align-top left-5 sm:left-10 md:text-6xl lg:left-5 xl:left-5 z-20">
                         <h1>
