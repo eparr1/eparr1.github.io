@@ -7,6 +7,7 @@ import { Skills } from "./Components/Skills";
 import { Container } from "postcss";
 import { TracingBeam } from "./Components/UI/tracing-beam";
 import Blog from "./blog/page";
+import Contact from "./Components/UI/contact";
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
 <About />
 
 
-
+<Contact />
 
         </TracingBeam>
         </div>
