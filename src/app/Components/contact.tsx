@@ -19,7 +19,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center gap-[50px] m-auto text-white">
+        <div className="flex flex-col items-center justify-center gap-[50px] m-auto text-white pb-4">
             <div className="relative text-4xl font-semibold">
                 <h1>Get in Touch</h1>
             </div>

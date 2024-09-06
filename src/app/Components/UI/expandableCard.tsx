@@ -210,13 +210,19 @@ const cards = [
   {
     description: "1/09/24",
     title: "Front-end QR Code Challenge",
-    src: "/avater.png",
+    src: "/QRcode.png",
     ctaText: "Read More",
     ctaLink: "/blog",
     content: () => {
       return (
         <p>
-          
+          So, this is my first challenge using front-end mentor and I used Tailwind CSS again. The main aim was to recreate the QR code image with the one provided and I have to say actually 
+          setting up both the Tailwind CSS and uploading it onto my GitHub was actually frustrating at times. It&apos;s amazing how quickly you forget the simple set-up instructions for a new project.
+          I don&apos;t know if this was just me but for some reason my Tailwind CSS was not computing with Git, as I set up and linked my project to GitHub first. It didn&apos;t like that. 
+          I ended up starting again, linking my Tailwind CSS first before connecting to GitHub and it did work. But still so annoying!!
+          Don&apos;t get me started on merging existing changes because there seemed to be some unsolved change stuck in the Git universe. I did work it out though ... eventually.
+          Just learning to take my time with it. But overall really glad I did this  challenge, which taught me a lot about setting up GitHub and setting up a project on 
+          Visual Studio Code.
         </p>
       );
     },
@@ -230,15 +236,7 @@ const cards = [
     content: () => {
       return (
         <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
+          
         </p>
       );
     },

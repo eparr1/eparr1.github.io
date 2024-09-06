@@ -6,7 +6,7 @@ import { SparklesCore } from "./UI/sparkles"
 
 export const BlogSection = () => {
     return (
-        <div className="relative w-full h-[500px] text-[#D8D8D8]">
+        <div className="relative w-full h-[550px] text-[#D8D8D8]">
             {/* Background Sparkles */}
             <div className="absolute inset-0 -z-5">
                 <SparklesCore
