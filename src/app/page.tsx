@@ -7,7 +7,7 @@ import { Skills } from "./Components/Skills";
 import { Container } from "postcss";
 import { TracingBeam } from "./Components/UI/tracing-beam";
 import Blog from "./blog/page";
-import Contact from "./Components/UI/contact";
+import Contact from "./Components/contact";
 
 export default function Home() {
   return (

@@ -46,8 +46,8 @@ export const Skills = () => {
       };
 
     return (
-    <div className="w-full h-[600px]">
-        <div className="flex text-2xl flex-row mt-3 text-white ">
+    <div className=" h-[300px]">
+        <div className="flex text-2xl flex-row mt-3 text-white hover:bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             <TabButton
                 selectTab={() => handleTabChange("skills")}
                 active={tab === "skills"}
