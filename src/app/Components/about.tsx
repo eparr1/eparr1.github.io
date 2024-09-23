@@ -42,11 +42,11 @@ const About = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full w-full text-white">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg pb-3 text-[#D8D8D8]">
-            I am a full stack web developer with a passion for creating
+            I am a wanna-be developer with a passion for creating
             interactive and responsive web applications. I have experience
             working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
             Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set.</p>
+            looking to expand my knowledge and skill set. And I have only gotten started</p>
           <Skills />
       </div>
   

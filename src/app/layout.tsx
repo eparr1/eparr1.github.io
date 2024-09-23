@@ -15,12 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html>
-      <body>
+    <html lang="en" className={inter.className}>
+      {/* No need to add 'body' here, Next.js will handle that */}
+      <body className="font-nunito">
         {children}
-        <main className="font-nunito bg-gradient-to-t from-indigo-200"></main>
       </body>
-      
     </html>
   );
 }

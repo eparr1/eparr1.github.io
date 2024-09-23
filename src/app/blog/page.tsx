@@ -1,22 +1,25 @@
 import React from "react";
-import BlogPage from "../Components/blogpost";
 import { Header } from "../Components/Header";
+import RootLayout from "./blogLayout";
+import { BlogExpands } from "./Components/blogExpandableCards";
 
 
 
-export default function Blog() {
+
+const Home = () => {
     return (
-        <div className="bg-black">
+      <RootLayout>
+        <main>
+         <div className="space-y-4 ">
+            <BlogExpands />
+           
             
-            <div className="pt-3 ">
-                    <BlogPage />
-             </div>
-
+            
         </div>
-            
-                    
+        </main>
+        
+      </RootLayout>
+    );
+  };
 
-                        
-                   
-    )
-}
+  export default Home
